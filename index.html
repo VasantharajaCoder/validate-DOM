@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name :</label>
+        <input type="text" id="name">
+        <label for="age">Age :</label>
+        <input type="number" id="age">
+        <button type="button" id="buttontag">submit</button>
+    </form>
+    <div id="errorMessages" style="color:red"></div>
+    <script>
+        let name=document.getElementById("name");
+        let age=document.getElementById("age");
+        let errorMessages=document.getElementById("errorMessages");
+        buttontag.addEventListener("click", validate);
+        function validate(){
+            if(name.value ===''){
+                errorMessages.innerText="Name is required";
+            }
+            else if(name.value.length >15){
+                errorMessages.innerText="Entered name should be below 15 characters";
+            }
+            else if(name.value.length<5){
+                errorMessages.innerText="Entered name should be more the 5 characters";
+            }
+            else if(age.value<25){
+                errorMessages.innerText="Age should be equal to or  more than 25";
+            }
+            else{
+                console.log("Your name is :"+name +"  " +"Your age is : "+age);
+
+            }
+
+        }
+
+    </script>
+</body>
+</html>
